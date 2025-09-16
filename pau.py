@@ -13,18 +13,19 @@ mday = 1
 st.title("PAU Energy consumption")
 st.write("Below are Energy readings for PAU from Sapt 2024 through Sept 2024 and August 2025 through September 2025.")
 
-df = pd.DataFrame({
-    "Category": ["0", "1", "2", "3","4","5","6","7","8", "9", "10","11","12","13","14",
-                 "15","16","17","18","19","20","21","22","23"] * 30,
-    "Value": np.random.randint(10, 100, 720),
-    "Year": sorted(list(range(1, 31)) * 24)
-})
+#df = pd.DataFrame({
+#    "Category": ["0", "1", "2", "3","4","5","6","7","8", "9", "10","11","12","13","14",
+#                 "15","16","17","18","19","20","21","22","23"] * 30,
+#    "Value": np.random.randint(10, 100, 720),
+#    "Year": sorted(list(range(1, 31)) * 24)
+#})
 #st.write(df)
 
 if "mbar" not in st.session_state:
     st.session_state.mbar = 0
 if "mnth" not in st.session_state:
     st.session_state.mnth = 0
+    
 st.session_state.mdata = 0
 if "name1" not in st.session_state:
     st.session_state.name1 = "June"
@@ -32,10 +33,10 @@ if "name1" not in st.session_state:
 if "name2" not in st.session_state:
     st.session_state.name2 = "July"
 
-df1 = pd.read_csv("energy_pau.csv")
-df_2025_sept = pd.read_csv("energy_pau_sept.csv")
-df_2024 = pd.read_csv("energy_pau_2024.csv")
-df_2024_sept = pd.read_csv("energy_pau_2024_sept.csv")
+df1 = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau.csv")
+df_2025_sept = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau_sept.csv")
+df_2024 = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau_2024.csv")
+df_2024_sept = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau_2024_sept.csv")
 
 
 
@@ -71,16 +72,16 @@ def move_2024():
         st.session_state.mbar = 0
         st.session_state.name1 = "June"
         st.session_state.name2 = "July"
-        if st.session_state.mbar == 0 and st.session_state.mnth == 0:
-            mdata = df_2024
-        elif st.session_state.mbar == 0 and st.session_state.mnth == 1:
-            mdata = df_2024_sept
+        #if st.session_state.mbar == 0 and st.session_state.mnth == 0:
+         #   mdata = df_2024
+        #elif st.session_state.mbar == 0 and st.session_state.mnth == 1:
+         #   mdata = df_2024_sept
 
 def move_1():
     """Increment the year index, preventing it from exceeding the maximum."""
     if st.session_state.mnth == 0:
         st.session_state.mnth = 1
-        st.session_state.mbar == 0
+        #st.session_state.mbar == 0
        
 
 def move_2():
@@ -111,7 +112,7 @@ elif st.session_state.mbar == 0 and st.session_state.mnth == 1:
 elif st.session_state.mbar == 1 and st.session_state.mnth == 0:
     mdata = df1
 elif st.session_state.mbar == 1 and st.session_state.mnth == 1:
-    mdata = df_2024_sept
+    mdata = df_2025_sept
 
 #st.write(mdata)
 
@@ -187,11 +188,11 @@ with col2:
 current_year = years[st.session_state.year_index]
 filtered_df = df[df['Day'] == current_year]
 
-data = {'Category': ['A', 'B', 'C', 'D'],
-        'Value': [25, 35, 20, current_year],
-         'Day':  [100, 200, 300, 150]
-        }
-df = pd.DataFrame(data)
+#data = {'Category': ['A', 'B', 'C', 'D'],
+#        'Value': [25, 35, 20, current_year],
+#         'Day':  [100, 200, 300, 150]
+#        }
+#df = pd.DataFrame(data)
 
 mCount = 0
 mday = {}
@@ -239,4 +240,3 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
-
