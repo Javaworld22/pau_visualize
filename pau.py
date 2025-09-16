@@ -32,10 +32,10 @@ if "name1" not in st.session_state:
 if "name2" not in st.session_state:
     st.session_state.name2 = "July"
 
-df1 = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau.csv")
-df_2025_sept = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau_sept.csv")
-df_2024 = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau_2024.csv")
-df_2024_sept = pd.read_csv("C:\\Users\\USER\\Downloads\\energy_pau_2024_sept.csv")
+df1 = pd.read_csv("energy_pau.csv")
+df_2025_sept = pd.read_csv("energy_pau_sept.csv")
+df_2024 = pd.read_csv("energy_pau_2024.csv")
+df_2024_sept = pd.read_csv("energy_pau_2024_sept.csv")
 
 
 
@@ -239,3 +239,4 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
