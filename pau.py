@@ -25,6 +25,8 @@ if "mbar" not in st.session_state:
     st.session_state.mbar = 0
 if "mnth" not in st.session_state:
     st.session_state.mnth = 0
+if "mStages" not in st.session_state:
+    st.session_state.mStages = 0
     
 st.session_state.mdata = 0
 if "name1" not in st.session_state:
@@ -107,12 +109,16 @@ with col4:
 
 if st.session_state.mbar == 0 and st.session_state.mnth == 0:
     mdata = df_2024
+    st.session_state.mStages = 1
 elif st.session_state.mbar == 0 and st.session_state.mnth == 1:
     mdata = df_2024_sept
+    st.session_state.mStages = 2
 elif st.session_state.mbar == 1 and st.session_state.mnth == 0:
     mdata = df1
+    st.session_state.mStages = 3
 elif st.session_state.mbar == 1 and st.session_state.mnth == 1:
     mdata = df_2025_sept
+    st.session_state.mStages = 4
 
 #st.write(mdata)
 
@@ -146,7 +152,7 @@ fig.update_layout(
 # Display the plot in Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
-if mdata == df_2024:
+if  st.session_state.mStages == 1:
     st.info("Extremely High Usage: Recorded daily consumption was exceptionally high, ranging from an estimated 700 to 900 kWh on full days. For context, this is many times higher than a typical household.")
     st.info("Significant Spike: The most notable event was a massive 77 kWh spike at 7 PM on June 25th, indicating a singular, high-power event like powering heating elements or higher inductive loads.")
     st.info("")
@@ -246,6 +252,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
