@@ -108,10 +108,10 @@ with col4:
     st.button(st.session_state.name2, on_click=move_2)
 
 if st.session_state.mbar == 0 and st.session_state.mnth == 0:
-    mdata = df_2024
+    mdata = df_2024_sept
     st.session_state.mStages = 1
 elif st.session_state.mbar == 0 and st.session_state.mnth == 1:
-    mdata = df_2024_sept
+    mdata = df_2024
     st.session_state.mStages = 2
 elif st.session_state.mbar == 1 and st.session_state.mnth == 0:
     mdata = df1
@@ -156,6 +156,14 @@ if  st.session_state.mStages == 1:
     st.info("Extremely High Usage: Recorded daily consumption was exceptionally high, ranging from an estimated 700 to 900 kWh on full days. For context, this is many times higher than a typical household.")
     st.info("Significant Spike: The most notable event was a massive 77 kWh spike at 7 PM on June 25th, indicating a singular, high-power event like powering heating elements or higher inductive loads.")
     st.info("")
+elif st.session_state.mStages == 2:
+    st.markdown("""
+    **Extremely High Hourly Consumption**: Energy use is consistently high throughout the day and night.
+    * Overnight (Midnight-6 AM): Consumption ranges from 16 to 30 kWh per hour.
+    - Daytime (8 AM-6 PM): Consumption peaks, frequently reaching 30 to 41 kWh per hour.
+    + The highest single hour recorded is 47 kWh at 5 AM on July 2nd, which is an unusual and massive spike for the early morning.
+
+    """)
 
 
 
@@ -252,6 +260,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
