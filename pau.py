@@ -152,17 +152,20 @@ fig.update_layout(
 # Display the plot in Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
-if  st.session_state.mStages == 1:
-    st.info("Extremely High Usage: Recorded daily consumption was exceptionally high, ranging from an estimated 700 to 900 kWh on full days. For context, this is many times higher than a typical household.")
-    st.info("Significant Spike: The most notable event was a massive 77 kWh spike at 7 PM on June 25th, indicating a singular, high-power event like powering heating elements or higher inductive loads.")
-    st.info("")
-elif st.session_state.mStages == 2:
+if  st.session_state.mStages == 2:
+    st.write("Extremely High Usage: Recorded daily consumption was exceptionally high, ranging from an estimated 700 to 900 kWh on full days. For context, this is many times higher than a typical household.")
+    st.write("Significant Spike: The most notable event was a massive 77 kWh spike at 7 PM on June 25th, indicating a singular, high-power event like powering heating elements or higher inductive loads.")
+    st.write("")
+elif st.session_state.mStages == 1:
     st.markdown("""
-    **Extremely High Hourly Consumption**: Energy use is consistently high throughout the day and night.
+    **1. Extremely High Hourly Consumption**: Energy use is consistently high throughout the day and night.
     * Overnight (Midnight-6 AM): Consumption ranges from 16 to 30 kWh per hour.
     - Daytime (8 AM-6 PM): Consumption peaks, frequently reaching 30 to 41 kWh per hour.
     + The highest single hour recorded is 47 kWh at 5 AM on July 2nd, which is an unusual and massive spike for the early morning.
-
+    **2. Stable Baseline Load**: The constant high consumption (rarely dropping below 20 kWh in any hour) suggests a high baseline load. This implies that major equipment is running continuously, such as:
+    * Industrial machinery (Inductive Loads)
+    * Heating elements or filaments
+    * The 47 kWh spike in the early morning of July 2nd is a significant anomaly that likely represents a specific high-power process starting up.
     """)
 
 
@@ -260,6 +263,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
