@@ -169,18 +169,23 @@ elif st.session_state.mStages == 1:
     * Heating elements or filaments
     * The 47 kWh spike in the early morning of July 2nd is a significant anomaly that likely represents a specific high-power process starting up.
     """)
-elif st.session_state.mStages == 3:
+elif st.session_state.mStages == 4:
     st.markdown("""
      Average (Mean) Consumption (~25.2 kWh): This is the mathematical average of all hourly consumption values for August.
     """)
     st.markdown("""
      Average (Mean) Consumption (~25.2 kWh): This is the mathematical average of all hourly consumption values for August
     """)
-    st.martdown("""
+    st.markdown("""
      Maximum Consumption (89 kWh): This was the highest amount of energy used in a single hour during August. This peak occurred twice:
      + August 20 at 3:00 PM (15:00)
      + August 25 at 1:00 PM (13:00)
      N/B: This very large range confirms that August's energy use was highly volatile, switching between periods of no use and very intense use.
+    """)
+elif st.session_state.mStages == 3:
+    st.markdown("""
+    High Spikes: Significant spikes in usage, such as a 55 kWh draw at 8:00 AM on Sept 1st and a 41 kWh draw at 8:00 PM that same day.
+    Low Consumption: Periods of very low or zero usage (e.g., 0 kWh at 2:00 AM, 5 kWh at 6:00 AM, 7 kWh at 10:00 PM).
     """)
 
 
@@ -278,6 +283,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
