@@ -146,7 +146,7 @@ fig.update_layout(
 # Display the plot in Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
-if mdata == df_2024
+if mdata == df_2024:
     st.info("Extremely High Usage: Recorded daily consumption was exceptionally high, ranging from an estimated 700 to 900 kWh on full days. For context, this is many times higher than a typical household.")
     st.info("Significant Spike: The most notable event was a massive 77 kWh spike at 7 PM on June 25th, indicating a singular, high-power event like powering heating elements or higher inductive loads.")
     st.info("")
@@ -246,6 +246,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
