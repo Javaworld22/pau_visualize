@@ -114,10 +114,10 @@ elif st.session_state.mbar == 0 and st.session_state.mnth == 1:
     mdata = df_2024
     st.session_state.mStages = 2
 elif st.session_state.mbar == 1 and st.session_state.mnth == 0:
-    mdata = df1
+    mdata = df_2025_sept
     st.session_state.mStages = 3
 elif st.session_state.mbar == 1 and st.session_state.mnth == 1:
-    mdata = df_2025_sept
+    mdata = df1
     st.session_state.mStages = 4
 
 #st.write(mdata)
@@ -168,6 +168,19 @@ elif st.session_state.mStages == 1:
     * Industrial machinery (Inductive Loads)
     * Heating elements or filaments
     * The 47 kWh spike in the early morning of July 2nd is a significant anomaly that likely represents a specific high-power process starting up.
+    """)
+elif st.session_state.mStages == 3:
+    st.markdown("""
+     Average (Mean) Consumption (~25.2 kWh): This is the mathematical average of all hourly consumption values for August.
+    """)
+    st.markdown("""
+     Average (Mean) Consumption (~25.2 kWh): This is the mathematical average of all hourly consumption values for August
+    """)
+    st.martdown("""
+     Maximum Consumption (89 kWh): This was the highest amount of energy used in a single hour during August. This peak occurred twice:
+     + August 20 at 3:00 PM (15:00)
+     + August 25 at 1:00 PM (13:00)
+     N/B: This very large range confirms that August's energy use was highly volatile, switching between periods of no use and very intense use.
     """)
 
 
@@ -265,6 +278,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
