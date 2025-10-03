@@ -9,7 +9,10 @@ import time
 import sys
 
 
-mday = 1
+st.title("Executive Summary: Our Solution Dashboard")
+image1 = Image.open('dashboard1.png')
+st.image(image1, caption='Dashboard', use_column_width=True)
+
 st.title("PAU Energy consumption")
 st.write("Below are Energy readings for PAU from Sapt 2024 through Sept 2024 and August 2025 through September 2025.")
 
@@ -283,6 +286,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
