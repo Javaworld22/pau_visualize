@@ -253,7 +253,7 @@ with col2:
 
 # Get the current year based on the index
 current_year = years[st.session_state.year_index]
-filtered_df = df[df['Day'] == current_year]
+#filtered_df = df[df['Day'] == current_year]
 
 #data = {'Category': ['A', 'B', 'C', 'D'],
 #        'Value': [25, 35, 20, current_year],
@@ -307,6 +307,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
