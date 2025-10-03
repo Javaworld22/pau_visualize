@@ -11,7 +11,7 @@ import sys
 
 
 st.title("Executive Summary: Our Solution Dashboard")
-image1 = Image.open('dashboard1.png')
+image1 = Image.open('dashboard1.PNG')
 st.image(image1, caption='Dashboard', use_column_width=True)
 
 st.title("PAU Energy consumption")
@@ -287,6 +287,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
