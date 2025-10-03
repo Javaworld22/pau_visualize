@@ -214,11 +214,11 @@ elif st.session_state.mStages == 3:
 
 
 
-data = {'Category': ['A', 'B', 'C', 'D'],
-        'Value': [25, 35, 20, mday],
-         'Day':  [100, 200, 300, 150]
-        }
-df = pd.DataFrame(data)
+#data = {'Category': ['A', 'B', 'C', 'D'],
+#        'Value': [25, 35, 20, mday],
+#         'Day':  [100, 200, 300, 150]
+#        }
+#df = pd.DataFrame(data)
 
 
 
@@ -307,6 +307,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
