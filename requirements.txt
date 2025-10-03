@@ -4,4 +4,5 @@ numpy
 datetime
 raceplotly
 plotly
-PIL
+Pillow
+
