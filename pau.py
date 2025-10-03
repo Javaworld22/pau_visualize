@@ -189,6 +189,23 @@ elif st.session_state.mStages == 4:
      + August 25 at 1:00 PM (13:00)
      N/B: This very large range confirms that August's energy use was highly volatile, switching between periods of no use and very intense use.
     """)
+    try:
+        mg = pd.read_csv("energy_first.csv")
+        st.dataframe(mg)
+    except Exception asd e:
+        st.error(f"An error occurred while reading the CSV file: {e}")
+    st.markdown("""
+    + Peak EneAverage Energy: 24.6
+    + Average Energy: 24.6
+    + Daily Energy Consumption: 16,933.0 total across all periods
+    + Standard Deviation: 16.7
+    + Variance: 277.7
+
+    """)
+    
+        
+        
+    
 elif st.session_state.mStages == 3:
     st.markdown("""
     High Spikes: Significant spikes in usage, such as a 55 kWh draw at 8:00 AM on Sept 1st and a 41 kWh draw at 8:00 PM that same day.
@@ -290,6 +307,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
