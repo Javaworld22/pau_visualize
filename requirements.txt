@@ -4,3 +4,4 @@ numpy
 datetime
 raceplotly
 plotly
+PIL
