@@ -192,7 +192,7 @@ elif st.session_state.mStages == 4:
     try:
         mg = pd.read_csv("energy_first.csv")
         st.dataframe(mg)
-    except Exception asd e:
+    except Exception as e:
         st.error(f"An error occurred while reading the CSV file: {e}")
     st.markdown("""
     + Peak EneAverage Energy: 24.6
@@ -307,6 +307,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
