@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 from raceplotly.plots import barplot
+from PIL import Image
 import time
 import sys
 
@@ -286,6 +287,7 @@ st.selectbox("Select Day", mday)
 
 mMonth = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec")
 st.selectbox("Select Month", mMonth)
+
 
 
 
